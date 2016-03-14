@@ -37,4 +37,13 @@ public class MiHashSet
         }
         return enLaLista;
     }
+    /**
+     * Vacia la lista
+     */
+    public void clear()
+    {
+        lista.clear();
+    }
+
+
 }
