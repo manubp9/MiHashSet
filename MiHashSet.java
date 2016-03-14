@@ -60,6 +60,18 @@ public class MiHashSet
         return enLaLista;
        
     } 
+    /**
+     *Devuelve verdadero si el conjunto no contiene elementos.
+     */
+    public boolean isEmpty()
+    {
+        boolean vacio = false;
+        if(lista.size()== 0)
+        {
+            vacio =true;
+        }
+        return vacio;
+    }
 
 
 }
