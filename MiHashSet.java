@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 /**
  * Write a description of class MiHashSet here.
  * 
@@ -7,14 +7,14 @@ import java.util.ArrayList;
  */
 public class MiHashSet
 {
-    private ArrayList lista;
+    private ArrayListInt lista;
 
     /**
      * Constructor for objects of class MiHashSet
      */
     public MiHashSet()
     {
-        lista = new ArrayList();
+        lista = new ArrayListInt();
     }
 
     /**
@@ -35,6 +35,7 @@ public class MiHashSet
         }
         return enLaLista;
     }
+
     /**
      * Vacia la lista
      */
@@ -42,6 +43,7 @@ public class MiHashSet
     {
         lista.clear();
     }
+
     /**
      *devuelve verdadero si el conjunto contiene el elemento, 
      * falso en caso contrario.
@@ -58,8 +60,9 @@ public class MiHashSet
             enLaLista = false;
         }
         return enLaLista;
-       
+
     } 
+
     /**
      *Devuelve verdadero si el conjunto no contiene elementos.
      */
@@ -72,6 +75,7 @@ public class MiHashSet
         }
         return vacio;
     }
+
     /**
      * elimina del conjunto el elemento dado. 
      * Si no existiera devuelve falso; si existía en el conjunto devuelve verdadero.
@@ -81,7 +85,8 @@ public class MiHashSet
         boolean enLaLista = false;
         if(lista.contains(elemento))
         {
-            int indice = lista.indexOf(elemento);//metodo que te selecciona el indice del elemento deseado
+            int indice = lista.indexOf(elemento);//metodo que te selecciona el indice del elemento 
+            //deseado
             lista.remove(indice);
             enLaLista = true;
         }
@@ -90,13 +95,65 @@ public class MiHashSet
             enLaLista = false;
         }
         return enLaLista;
-        
+
     }
+
     /**
      * Devuelve el numero de elementos de la lista
      */
     public int size()
     {
         return lista.size();
+    }
+
+    /**
+     * devuelve una cadena conteniendo todos los elementos del conjunto separados por comas 
+     * y entre corchetes.
+     */
+    public String toString()
+    {
+        String cadena = "[";
+        int index = 0;
+        while(size() > index)
+        {
+            if(index == 0)
+            {
+                cadena = cadena + lista.get(index);
+            }
+            else
+            {
+                cadena = cadena + ", " + lista.get(index);
+            }
+            index++;
+        }
+
+        cadena = cadena + "]";
+        return cadena;
+    }
+
+    /**
+     *  devuelve verdadero si el parámetro es igual al conjunto sobre el que se invoca 
+     *  y falso en otro caso.
+     */
+    public boolean equals(MiHashSet otroConjunto)
+    {
+        boolean iguales = true;
+        if(size() == otroConjunto.size() )
+        {
+            int index = 0;
+            while( index < size() && (iguales) )
+            {
+                if (!otroConjunto.contains(lista.get(index)))
+                {
+                    iguales = false;
+                }
+                index++;
+            }
+        }
+        else
+        {
+            iguales = false;
+        }
+        return iguales;
     }
 }
