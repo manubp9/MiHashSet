@@ -19,4 +19,22 @@ public class MiHashSet
         lista = new ArrayList();
     }
 
+    /**
+     * añade el elemento al conjunto si no estaba. 
+     * Devuelve verdadero en caso de que el elemento no estuviera presente en el conjunto 
+     * y falso en caso contrario.
+     */
+    public boolean add(int valor)
+    {
+        boolean enLaLista = true;//interruptor logico 
+        if((lista.contains(valor)))
+        {
+            enLaLista = false;
+        }
+        else
+        {
+            lista.add(valor);
+        }
+        return enLaLista;
+    }
 }
