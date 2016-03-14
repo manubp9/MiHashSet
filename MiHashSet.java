@@ -7,8 +7,6 @@ import java.util.ArrayList;
  */
 public class MiHashSet
 {
-    
-    // lista de enteros
     private ArrayList lista;
 
     /**
@@ -44,6 +42,24 @@ public class MiHashSet
     {
         lista.clear();
     }
+    /**
+     *devuelve verdadero si el conjunto contiene el elemento, 
+     * falso en caso contrario.
+     */
+    public boolean contains(int elemento)
+    {
+        boolean enLaLista = false;
+        if(lista.contains(elemento))
+        {
+            enLaLista = true;
+        }
+        else
+        {
+            enLaLista = false;
+        }
+        return enLaLista;
+       
+    } 
 
 
 }
