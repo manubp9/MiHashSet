@@ -92,6 +92,11 @@ public class MiHashSet
         return enLaLista;
         
     }
-
-
+    /**
+     * Devuelve el numero de elementos de la lista
+     */
+    public int size()
+    {
+        return lista.size();
+    }
 }
